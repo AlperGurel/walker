@@ -183,10 +183,11 @@ class Walker{
 
 let w;
 let distribution = gaussian(1.5, 0.02);
-
+let canvasPadding = 30;
 
 function setup(){
-    createCanvas(1800, 900);
+    //createCanvas(1800, 900);
+    createCanvas(windowWidth - canvasPadding, windowHeight - canvasPadding);
     w = new Walker();
 
 
