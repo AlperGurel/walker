@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="p5.min.js"></script>
-    <script src="node_modules/gaussian/lib/gaussian.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georama:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Organism</title>
-</head>
-<body>
-
-</body>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <p>This is a demo text.</p>
+        <div>
+          <p>Maximum speed</p>
+          <input
+            id="speed"
+            type="range"
+            min="1"
+            max="100"
+            onchange="updateSpeed(this.value)"
+          />
+        </div>
+        <div>
+          <p>Acceleration factor</p>
+          <input
+            id="acceleration"
+            type="range"
+            min="1"
+            max="1000"
+            value="1"
+            onchange="updateAcceleration(this.value)"
+          />
+        </div>
+        <div>
+          <input type="checkbox" id="friction" name="friction" />
+          <label for="friction">Friction</label>
+        </div>
+        <div>
+          <input type="checkbox" id="bounds" name="bounds" />
+          <label for="bounds">Out of bounds</label>
+        </div>
+        <div>
+          <button>Center</button>
+        </div>
+        <div id="p5-container"></div>
+      </div>
+    </div>
+  </body>
+  <script src="p5.min.js"></script>
+  <!-- <script src="node_modules/gaussian/lib/gaussian.js"></script> -->
+  <script src="index.js"></script>
 </html>
