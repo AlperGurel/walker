@@ -9,4 +9,4 @@ In this project, I aim to demonstrate the effects of **maximum velocity** and **
 
 ![Image of website](https://github.com/AlperGurel/walker/blob/master/ss.png)
 
-[You can view the project here](http://walker.alpergurel.com/)
+[You can view the project here](https://alpergurel.github.io/walker/)
