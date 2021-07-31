@@ -8,3 +8,5 @@ Highschool physics lessons were in fact very **interesting**. They may be boring
 In this project, I aim to demonstrate the effects of **maximum velocity** and **acceleration rate** to the movement.
 
 ![Image of website](https://github.com/AlperGurel/walker/blob/master/ss.png)
+
+[### You can view the project here](http://walker.alpergurel.com/)
