@@ -6,3 +6,5 @@ Highschool physics lessons were in fact very **interesting**. They may be boring
 [p5](https://p5js.org/) is an extremely **fun** library for experimenting stuff. It has drawing helpers for easily creating a canvas. You can also work with vectors easily.
 
 In this project, I aim to demonstrate the effects of **maximum velocity** and **acceleration rate** to the movement.
+
+![Image of website](https://github.com/AlperGurel/walker/blob/master/ss.png)
