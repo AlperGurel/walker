@@ -15,42 +15,116 @@
   <body>
     <div class="container-fluid">
       <div class="container">
-        <p>This is a demo text.</p>
-        <div>
-          <p>Maximum speed</p>
-          <input
-            id="speed"
-            type="range"
-            min="1"
-            max="100"
-            onchange="updateSpeed(this.value)"
-          />
+        <div class="content">
+          <h4>PURPOSE</h4>
+          <p>
+            Highschool physics lessons were in fact very
+            <em>interesting.</em> They may be boring if you learning to pass the
+            exams, but they are very useful when I try to learn new libraries.
+          </p>
+          <p>
+            <a href="https://p5js.org/" target="_blank">p5</a> is an extremely
+            <em>fun</em> library for experimenting stuff. It has drawing helpers
+            for easily creating a canvas. You can also work with
+            <em
+              ><a href="https://p5js.org/reference/#/p5.Vector" target="_blank"
+                >vectors</a
+              ></em
+            >
+            easily.
+          </p>
+          <p>
+            In this project, I aim to demonstrate the effects of
+            <em> maximum velocity </em> and <em>acceleration rate</em> to the
+            movement.
+          </p>
+          <p>If you want new circles, hit the <em>Create Circle</em> button.</p>
+          <p>
+            If you want to circles to follow you, just move the
+            <em>cursor</em> over the canvas below.
+          </p>
         </div>
-        <div>
-          <p>Acceleration factor</p>
-          <input
-            id="acceleration"
-            type="range"
-            min="1"
-            max="1000"
-            value="1"
-            onchange="updateAcceleration(this.value)"
-          />
-        </div>
-        <div>
-          <input type="checkbox" id="friction" name="friction" />
-          <label for="friction">Friction</label>
-        </div>
-        <div>
-          <input type="checkbox" id="bounds" name="bounds" />
-          <label for="bounds">Out of bounds</label>
-        </div>
-        <div>
-          <button>Center</button>
+        <div class="controls">
+          <div>
+            <div>
+              <label>Maximum speed</label>
+              <input
+                id="speed"
+                type="range"
+                min="1"
+                max="100"
+                onchange="updateSpeed(this.value)"
+              />
+            </div>
+            <div>
+              <label>Acceleration factor</label>
+              <input
+                id="acceleration"
+                type="range"
+                min="10"
+                max="1000"
+                onchange="updateAcceleration(this.value)"
+              />
+            </div>
+            <div>
+              <input type="checkbox" id="friction" name="friction" />
+              <label for="friction"
+                >Friction (currently <em>not working</em>)</label
+              >
+            </div>
+          </div>
+          <div>
+            <button class="fancy-button" onclick="createNewCircle()">
+              <span class="front">Create Circle</span>
+            </button>
+          </div>
         </div>
         <div id="p5-container"></div>
+        <div class="content">
+          <h4>WHAT DID I LEARN?</h4>
+          <p>
+            This section includes content of <em>closed tabs</em> after a
+            project. <em>:)</em>
+          </p>
+          <p>
+            You can decorate html <em>button</em> elements
+            <a
+              href="https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic"
+              >like that</a
+            >.
+          </p>
+          <p>
+            You can play <em>audio</em> in your page with a source element
+            referencing and audio file.
+            <a href="https://www.w3schools.com/jsref/met_audio_play.asp"
+              >Here.</a
+            >
+          </p>
+          <p>
+            I copied the <em>Create Circle</em> button from Josh Comeau'a
+            <a href="https://www.joshwcomeau.com/animation/3d-button/"
+              >website</a
+            >
+          </p>
+          <p>
+            You can create and control <em>range sliders</em>
+            <a href="https://www.w3schools.com/howto/howto_js_rangeslider.asp"
+              >like that</a
+            >.
+          </p>
+          <p>
+            Other than those above, there are a lot of things I have learned
+            from this project about <a href="https://p5js.org/">P5</a> library.
+            It has really basic <em>learning curve</em>, so I would recommend it
+            to anyone that has an interest in drawing something in web browsers
+            easily.
+          </p>
+        </div>
       </div>
     </div>
+    <audio id="blop">
+      <source src="blop.wav" type="audio/wav" />
+    </audio>
   </body>
   <script src="p5.min.js"></script>
   <!-- <script src="node_modules/gaussian/lib/gaussian.js"></script> -->

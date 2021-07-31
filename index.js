@@ -1,11 +1,12 @@
 //CONTROLS
-var maxSpeed = 10;
-var accelerationFactor = 1;
+var maxSpeed = 5;
+var accelerationFactor = 200;
 
 var speedInput = document.getElementById("speed");
-speedInput.value = maxSpeed;
-
 var accelerationInput = document.getElementById("acceleration");
+var blopElement = document.getElementById("blop");
+
+speedInput.value = maxSpeed;
 accelerationInput.value = accelerationFactor;
 
 function updateSpeed(value) {
@@ -15,95 +16,52 @@ function updateSpeed(value) {
 function updateAcceleration(value) {
   accelerationFactor = value;
 }
-//Get below info from window
-width = 1920;
-height = 1080;
 
-class Walker {
-  constructor() {
-    this.distributionx = gaussian(0, 2);
-    this.distributiony = gaussian(0, 2);
-    this.position = createVector(width / 2, height / 2);
-    this.clickedPosition = null;
-  }
+let movers = [];
 
-  display() {
-    stroke(0);
-    point(this.position.x, this.position.y);
-  }
-
-  step() {
-    if (this.clickedPosition) {
-      //let difference = this.clickedPosition.sub(this.position);
-      let difference = p5.Vector.sub(this.clickedPosition, this.position);
-      difference.normalize();
-      this.distributionx = gaussian(difference.x, 0.5);
-      this.distributiony = gaussian(difference.y, 0.5);
-    }
-    let stepx = this.distributionx.ppf(Math.random());
-    let stepy = this.distributiony.ppf(Math.random());
-    let velocity = createVector(stepx, stepy);
-    velocity.normalize();
-    velocity = velocity.mult(2);
-    this.position.add(velocity);
-  }
-
-  changeVelocity() {
-    this.clickedPosition = createVector(mouseX, mouseY);
-    console.log(this.clickedPosition.x, this.clickedPosition.y);
-  }
+function createNewCircle() {
+  blopElement.play();
+  m = new Mover();
+  movers.push(m);
 }
 
-class Car {
-  constructor() {
-    this.location = createVector(100, height / 2);
-    this.velocity = createVector(0, 0);
-    this.acceleration = createVector(0, 0);
-    this.accActive = false;
-    this.decActive = false;
-  }
-
-  display() {
-    stroke(0);
-    background(255, 255, 255);
-    fill(175);
-    ellipse(this.location.x, this.location.y, 16, 16);
-  }
-
-  update() {
-    this.velocity.add(this.acceleration);
-    this.location.add(this.velocity);
-    if (this.accActive) {
-      this.acceleration.x += 0.001;
-      this.acceleration.x = constrain(this.acceleration.x, 0, 10);
-    }
-    if (this.decActive) {
-      if (this.velocity.x < 0) {
-        this.acceleration.x = 0;
-      } else {
-        this.acceleration.x -= 0.005;
-      }
-    }
-  }
-}
+//mover class
 
 class Mover {
   constructor() {
-    this.location = createVector(width / 2, height / 2);
+    this.location = createVector(400, 175);
     this.velocity = createVector(0, 0);
     this.acceleration = createVector(0, 0);
+    this.currentTarget = createVector(random(0, 800), random(0, 350));
+    this.movementType = "idle";
+    this.blue = random(0, 255);
+
+    setInterval(() => {
+      this.currentTarget = createVector(random(0, 800), random(0, 350));
+    }, 1000);
   }
 
   display() {
-    stroke(255, 225, 0);
-    background(24, 38, 53);
-    fill(255, 225, 0);
-    ellipse(this.location.x, this.location.y, 50, 50);
+    stroke(255, 225, this.blue);
+
+    fill(255, 225, this.blue);
+    ellipse(this.location.x, this.location.y, 30, 30);
   }
 
   update() {
-    let mousePosition = createVector(mouseX, mouseY);
-    let directionVector = p5.Vector.sub(mousePosition, this.location);
+    var targetPosition;
+    // if (this.movementType == "idle") {
+    //   targetPosition = this.currentTarget;
+    // } else if (this.movementType == "follow") {
+    //   targetPosition = createVector(mouseX, mouseY);
+    // }
+    if (mouseX >= 0 && mouseX <= 800 && mouseY >= 0 && mouseY <= 350) {
+      targetPosition = createVector(mouseX, mouseY);
+    } else {
+      targetPosition = this.currentTarget;
+    }
+
+    let directionVector = p5.Vector.sub(targetPosition, this.location);
     let distance = directionVector.mag();
     let accelerationMultiplier = distance / accelerationFactor;
     directionVector.normalize();
@@ -119,24 +77,17 @@ class Mover {
   }
 }
 
-let w;
-let c;
-let m;
-let canvasPadding = 30;
-
 function setup() {
-  var canvas = createCanvas(1200, 350);
+  var canvas = createCanvas(800, 350);
   canvas.parent("p5-container");
-  //w= new Walker();
-  //c = new Car();
   m = new Mover();
+  movers.push(m);
 }
 
 function draw() {
-  // w.step();
-  // w.display();
-  //c.update();
-  //c.display();
-  m.update();
-  m.display();
+  background(24, 38, 53);
+  movers.forEach((m) => {
+    m.update();
+    m.display();
+  });
 }
