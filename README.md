@@ -1,6 +1,6 @@
 # walker
 
-###PURPOSE
+### PURPOSE
 Highschool physics lessons were in fact very **interesting**. They may be boring if you are learning to pass the exams, but they are very useful when I try to learn new libraries.
 
 [p5](https://p5js.org/) is an extremely **fun** library for experimenting stuff. It has drawing helpers for easily creating a canvas. You can also work with vectors easily.
