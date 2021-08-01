@@ -198,7 +198,8 @@ p {
   display: block;
   padding: 40px;
   border-radius: 12px;
-  font-size: rem;
+  font-size: 2rem;
+  font-weight: bold;
   background: hsl(333deg, 100%, 52%);
   color: white;
   transform: translateY(-16px);
