@@ -123,7 +123,6 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding-top: 50px;
   width: 100%;
 }
@@ -136,6 +135,55 @@ p {
   width: 800px;
 }
 
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls label {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.controls > div > div {
+  margin: 3em 0;
+}
+
+.controls input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  height: 2em;
+  width: 90%;
+}
+
+.controls input[type="checkbox"] {
+  height: 3em;
+  width: 3em;
+  margin: 1em;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3em;
+  height: 3em;
+  background: hsl(333deg, 100%, 52%);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 3em;
+  height: 3em;
+  background: hsl(333deg, 100%, 52%);
+  cursor: pointer;
+}
+
+.controls div {
+  width: 100%;
+}
+
 .fancy-button {
   background: hsl(333deg, 100%, 20%);
   border-radius: 12px;
@@ -143,27 +191,21 @@ p {
   padding: 0;
   cursor: pointer;
   outline-offset: 4px;
+  width: 100%;
 }
 
 .front {
   display: block;
-  padding: 12px 42px;
+  padding: 40px;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: rem;
   background: hsl(333deg, 100%, 52%);
   color: white;
-  transform: translateY(-6px);
+  transform: translateY(-16px);
 }
 
 .fancy-button:active .front {
-  transform: translateY(-2px);
-}
-
-.controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  transform: translateY(2px);
 }
 
 #p5-container {
