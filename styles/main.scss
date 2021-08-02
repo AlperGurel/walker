@@ -1,0 +1,152 @@
+@import "base";
+
+.container-fluid {
+  background: linear-gradient(#181124, #222222);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  width: 100%;
+}
+
+.container {
+  width: 800px;
+}
+
+.content {
+  width: 800px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  label {
+    font-size: 40px;
+  }
+
+  div {
+    width: 100%;
+    div {
+      margin: 3em 0;
+    }
+  }
+  input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    height: 2em;
+    width: 90%;
+    margin-top: 20px;
+  }
+  input[type="checkbox"] {
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+  }
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3em;
+  height: 3em;
+  background: hsl(333deg, 100%, 52%);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 3em;
+  height: 3em;
+  background: hsl(333deg, 100%, 52%);
+  cursor: pointer;
+}
+
+.fancy-button {
+  background: hsl(333deg, 100%, 20%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  width: 100%;
+}
+
+.front {
+  display: block;
+  padding: 40px;
+  border-radius: 12px;
+  font-size: 40px;
+  font-weight: bold;
+  background: hsl(333deg, 100%, 52%);
+  color: white;
+  transform: translateY(-16px);
+}
+
+.fancy-button:active .front {
+  transform: translateY(2px);
+}
+
+#p5-container {
+  align-items: center;
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  width: 800px;
+}
+
+@media screen and (min-width: 1024px) {
+  .controls label {
+    font-size: 1em;
+  }
+  .controls > div > div {
+    margin: 1em 0;
+  }
+  .controls input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+    margin: 1em;
+  }
+  .fancy-button {
+    background: hsl(333deg, 100%, 20%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    width: 200px;
+  }
+  .front {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    background: hsl(333deg, 100%, 52%);
+    color: white;
+    transform: translateY(-5px);
+  }
+
+  .controls input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    height: 1em;
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    background: hsl(333deg, 100%, 52%);
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 1em;
+    height: 1em;
+    background: hsl(333deg, 100%, 52%);
+    cursor: pointer;
+  }
+}

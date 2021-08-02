@@ -1,0 +1,299 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  vertical-align: baseline;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  color: white;
+  font-family: "Georama", sans-serif;
+  font-size: large;
+}
+
+em {
+  color: #ff0a78;
+  font-weight: bold;
+}
+
+a {
+  color: #5773ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h4 {
+  margin-bottom: 2rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+.container-fluid {
+  background: -webkit-gradient(linear, left top, left bottom, from(#181124), to(#222222));
+  background: linear-gradient(#181124, #222222);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 50px;
+  width: 100%;
+}
+
+.container {
+  width: 800px;
+}
+
+.content {
+  width: 800px;
+}
+
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls label {
+  font-size: 40px;
+}
+
+.controls div {
+  width: 100%;
+}
+
+.controls div div {
+  margin: 3em 0;
+}
+
+.controls input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  height: 2em;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.controls input[type="checkbox"] {
+  height: 3em;
+  width: 3em;
+  margin: 1em;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3em;
+  height: 3em;
+  background: #ff0a78;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 3em;
+  height: 3em;
+  background: #ff0a78;
+  cursor: pointer;
+}
+
+.fancy-button {
+  background: #66002e;
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  width: 100%;
+}
+
+.front {
+  display: block;
+  padding: 40px;
+  border-radius: 12px;
+  font-size: 40px;
+  font-weight: bold;
+  background: #ff0a78;
+  color: white;
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+}
+
+.fancy-button:active .front {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+#p5-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 450px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 800px;
+}
+
+@media screen and (min-width: 1024px) {
+  .controls label {
+    font-size: 1em;
+  }
+  .controls > div > div {
+    margin: 1em 0;
+  }
+  .controls input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+    margin: 1em;
+  }
+  .fancy-button {
+    background: #66002e;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    width: 200px;
+  }
+  .front {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    background: #ff0a78;
+    color: white;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  .controls input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    height: 1em;
+    width: 200px;
+    margin-top: 20px;
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    background: #ff0a78;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 1em;
+    height: 1em;
+    background: #ff0a78;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=main.css.map */
